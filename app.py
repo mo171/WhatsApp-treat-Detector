@@ -40,6 +40,6 @@ def result_image():
         AI_generated = detect_ai_image('static/image.png') 
         return render_template('result_image.html', image_path='static/image.png', AI_generated=AI_generated)
 
-
+# RUN THE MAIN FILE
 if __name__ == '__main__':
     app.run()
