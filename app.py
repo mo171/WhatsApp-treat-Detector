@@ -9,6 +9,7 @@
 '''
 # IMPORTING ALL THE NESSECARY LIBRARIES
 from flask import Flask, request, render_template
+import os
 from logic import process_chat
 from logic import detect_ai_image
 
