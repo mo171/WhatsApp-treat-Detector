@@ -30,9 +30,8 @@ def result_text():
         processed = process_chat(chat)
         return render_template('result_text.html', chat=processed['processed_chat'], is_threat=processed['is_threat'])
 
-
 @app.route('/result_image', methods=['GET', 'POST'])    
-def result_image():
+def result_image():   
     if request.method == 'POST':
         image_path = request.files.get('image')
         image_path.save('static/image.png')       
@@ -42,4 +41,7 @@ def result_image():
 
 # RUN THE MAIN FILE
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+   
+ 
